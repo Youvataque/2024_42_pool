@@ -6,7 +6,7 @@
 /*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:34:01 by yseguin           #+#    #+#             */
-/*   Updated: 2024/08/03 16:33:01 by seguinyanni      ###   ########.fr       */
+/*   Updated: 2024/08/03 16:59:04 by seguinyanni      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 char	**ft_split(char *str, char *charset);
 t_dic	*convert_tab(char **str_tab);
-int		ft_strlen(char *str);
 char	*file_to_string(const char *file_path);
 void	clean_str(char *str);
 void	clean_str_tab(char **tab);
+void clean_dic(t_dic *dic);
 void	ft_print(char *str, t_dic *tab);
 
 ///////////////////////////////////////////////////////////////////
@@ -48,12 +48,7 @@ int	main(int ac, char **av)
 	struct_tab = convert_tab(tab);
 	clean_str(str);
 	ft_print(to_print, struct_tab);
-	for (i = 0; struct_tab[i].value != NULL; i++)
-	{
-		free(struct_tab[i].key);
-		free(struct_tab[i].value);
-	}
-	free(struct_tab);
+	clean_dic(struct_tab);
 	clean_str_tab(tab);
 	return (0);
 }
