@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yseguin <youvataque@icloud.com>            +#+  +:+       +#+        */
+/*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:34:01 by yseguin           #+#    #+#             */
-/*   Updated: 2024/08/03 15:57:39 by yseguin          ###   ########.fr       */
+/*   Updated: 2024/08/03 16:16:23 by seguinyanni      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int ac, char **av)
 	char	**tab;
 	char	*to_print;
 	t_dic	*struct_tab;
+	int		i;
 
 	if (ac <= 2)
 	{
@@ -47,6 +48,11 @@ int	main(int ac, char **av)
 	struct_tab = convert_tab(tab);
 	clean_str(str);
 	ft_print(to_print, struct_tab);
+	for (i = 0; struct_tab[i].value != NULL; i++)
+	{
+		free(struct_tab[i].key);
+		free(struct_tab[i].value);
+	}
 	free(struct_tab);
 	clean_str_tab(tab);
 	return (0);
