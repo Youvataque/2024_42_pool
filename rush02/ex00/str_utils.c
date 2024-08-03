@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yseguin <youvataque@icloud.com>            +#+  +:+       +#+        */
+/*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 11:18:19 by seguinyanni       #+#    #+#             */
-/*   Updated: 2024/08/03 15:58:22 by yseguin          ###   ########.fr       */
+/*   Updated: 2024/08/03 16:31:50 by seguinyanni      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ///////////////////////////////////////////////////////////////////
 // check if a str contain char c ex: c -> [a, b, c] -> yes
-int	contain(char *str, char c)
+int	ft_contain(char *str, char c)
 {
 	int		i;
 
@@ -33,7 +33,7 @@ int	contain(char *str, char c)
 
 ///////////////////////////////////////////////////////////////////
 // return number of char in str
-int	str_len(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -81,12 +81,12 @@ int	nb_word(char *str, char *charset)
 	result = 0;
 	while (str[i])
 	{
-		if (!contain(charset, str[i]) && !in_word)
+		if (!ft_contain(charset, str[i]) && !in_word)
 		{
 			in_word = 1;
 			result++;
 		}
-		else if (contain(charset, str[i]))
+		else if (ft_contain(charset, str[i]))
 		{
 			in_word = 0;
 		}
@@ -111,10 +111,10 @@ char	**ft_split(char *str, char *charset)
 	k = 0;
 	while (str[i])
 	{
-		while (str[i] && contain(charset, str[i]))
+		while (str[i] && ft_contain(charset, str[i]))
 			i++;
 		j = i;
-		while (str[i] && !contain(charset, str[i]))
+		while (str[i] && !ft_contain(charset, str[i]))
 			i++;
 		if (i > j)
 		{

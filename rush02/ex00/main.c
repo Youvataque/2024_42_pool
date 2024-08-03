@@ -6,7 +6,7 @@
 /*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:34:01 by yseguin           #+#    #+#             */
-/*   Updated: 2024/08/03 16:16:23 by seguinyanni      ###   ########.fr       */
+/*   Updated: 2024/08/03 16:33:01 by seguinyanni      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 char	**ft_split(char *str, char *charset);
 t_dic	*convert_tab(char **str_tab);
-int		str_len(char *str);
+int		ft_strlen(char *str);
 char	*file_to_string(const char *file_path);
 void	clean_str(char *str);
 void	clean_str_tab(char **tab);

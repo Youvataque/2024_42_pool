@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean.c                                            :+:      :+:    :+:   */
+/*   str_utils2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/03 14:34:28 by yseguin           #+#    #+#             */
-/*   Updated: 2024/08/03 16:33:30 by seguinyanni      ###   ########.fr       */
+/*   Created: 2024/08/03 16:30:56 by seguinyanni       #+#    #+#             */
+/*   Updated: 2024/08/03 16:32:09 by seguinyanni      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-///////////////////////////////////////////////////////////////////
-// clean str malloc
-void	clean_str(char *str)
-{
-	free(str);
-}
+int	ft_strlen(char *str);
 
-///////////////////////////////////////////////////////////////////
-// clean tab of str malloc
-void	clean_str_tab(char **tab)
+/////////////////////////////////////////////
+// func for deplicate str
+char	*ft_strdup(char *src)
 {
+	char	*tab;
 	int		i;
 
 	i = 0;
-	while (tab[i] != NULL)
+	tab = malloc(sizeof(char) * ft_strlen(src));
+	while (src[i])
 	{
-		free(tab[i]);
+		tab[i] = src[i];
 		i++;
 	}
-	free(tab);
+	tab[i] = '\0';
+	return (tab);
 }

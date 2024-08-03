@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yseguin <youvataque@icloud.com>            +#+  +:+       +#+        */
+/*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 11:36:55 by seguinyanni       #+#    #+#             */
-/*   Updated: 2024/08/03 15:58:02 by yseguin          ###   ########.fr       */
+/*   Updated: 2024/08/03 16:34:40 by seguinyanni      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <stdlib.h>
 #include "struct.h"
 
-int	str_len(char *str);
+int	ft_strlen(char *str);
+char	*ft_strdup(char *src);
 
 ///////////////////////////////////////////////////////////////////
 // count size of file_path (in bytes)
@@ -89,13 +90,13 @@ t_dic	*convert_tab(char **str_tab)
 	{
 		if (index[0] % 2 != 0)
 		{
-			result[index[1]].value = str_tab[index[0]];
+			result[index[1]].value = ft_strdup(str_tab[index[0]]);
 			index[1]++;
 		}
 		else
 		{
-			result[index[1]].key = str_tab[index[0]];
-			result[index[1]].key_len = str_len(str_tab[index[0]]);
+			result[index[1]].key = ft_strdup(str_tab[index[0]]);
+			result[index[1]].key_len = ft_strlen(str_tab[index[0]]);
 		}
 		index[0]++;
 	}
