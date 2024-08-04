@@ -6,7 +6,7 @@
 /*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:21:10 by yseguin           #+#    #+#             */
-/*   Updated: 2024/08/01 17:07:30 by seguinyanni      ###   ########.fr       */
+/*   Updated: 2024/08/04 21:39:11 by seguinyanni      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	ft_putnbr(int nb)
 void	ft_show_tab(struct s_stock_str *par)
 {
 	int		i;
-	char	c;
 
 	i = 0;
 	while (par[i].str != 0)
