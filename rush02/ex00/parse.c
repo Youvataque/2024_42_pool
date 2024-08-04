@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
+/*   By: yseguin <youvataque@icloud.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 11:36:55 by seguinyanni       #+#    #+#             */
-/*   Updated: 2024/08/03 16:34:40 by seguinyanni      ###   ########.fr       */
+/*   Updated: 2024/08/03 17:53:30 by yseguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include "struct.h"
 
-int	ft_strlen(char *str);
+int		ft_strlen(char *str);
 char	*ft_strdup(char *src);
 
 ///////////////////////////////////////////////////////////////////
