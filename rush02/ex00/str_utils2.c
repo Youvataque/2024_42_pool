@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_utils2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yseguin <youvataque@icloud.com>            +#+  +:+       +#+        */
+/*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:30:56 by seguinyanni       #+#    #+#             */
-/*   Updated: 2024/08/04 19:55:43 by yseguin          ###   ########.fr       */
+/*   Updated: 2024/08/04 20:13:22 by seguinyanni      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,31 @@ int		ft_strlen(char *str);
 
 /////////////////////////////////////////////
 // func for deplicate str
+// ... code existant ...
 char	*ft_strdup(char *src)
 {
-	char	*tab;
 	int		i;
+	int		len;
+	char	*dup;
 
+	if (src[0] == ' ')
+		src++;
+
+	len = ft_strlen(src);
+	dup = malloc((len + 1) * sizeof(char));
+	if (dup == NULL)
+		return (NULL);
 	i = 0;
-	tab = malloc(sizeof(char) * ft_strlen(src));
 	while (src[i])
 	{
-		tab[i] = src[i];
+		dup[i] = src[i];
 		i++;
 	}
-	tab[i] = '\0';
-	return (tab);
+	dup[i] = '\0';
+	return (dup);
 }
+
+// ... code existant ...
 
 /////////////////////////////////////////////
 // skip zero for all number
