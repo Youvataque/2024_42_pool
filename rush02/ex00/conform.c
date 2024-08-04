@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conform.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yseguin <youvataque@icloud.com>            +#+  +:+       +#+        */
+/*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 13:07:39 by yseguin           #+#    #+#             */
-/*   Updated: 2024/08/04 20:06:49 by yseguin          ###   ########.fr       */
+/*   Updated: 2024/08/04 23:30:28 by seguinyanni      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ int		ft_strlen(char *str);
 
 ///////////////////////////////////////////////////////////////////
 // function that check if dic contain \n
-void	check_n(int *colon_found, int *space_found, char *str)
+void	check_n(int *colon_found, char *str)
 {
 	if (*str == '\n')
 	{
 		*colon_found = 1;
-		*space_found = 1;
 	}
 }
 
@@ -31,12 +30,10 @@ int	check_patern(char *str)
 {
 	int		i;
 	int		colon_found;
-	int		space_found;
 
 	i = 0;
 	colon_found = 0;
-	space_found = 0;
-	check_n(&colon_found, &space_found, str);
+	check_n(&colon_found, str);
 	while (str[i] != '\n' && str[i] != '\0')
 	{
 		if (str[i] == ':')
@@ -44,14 +41,10 @@ int	check_patern(char *str)
 			if (colon_found)
 				return (0);
 			colon_found = 1;
-			if (str[i + 1] == ' ' && colon_found && !space_found)
-				space_found = 1;
-			else
-				return (0);
 		}
 		i++;
 	}
-	if (colon_found == 1 && space_found == 1)
+	if (colon_found == 1)
 		return (1);
 	return (0);
 }
@@ -112,4 +105,12 @@ int	ft_control(char *str)
 		}
 	}
 	return (1);
+}
+
+/////////////////////////////////////////////
+// Sometime good guy need to do bad things
+void	ft_margoulin(int *len, char **str)
+{
+	(*str)++;
+	(*len)--;
 }

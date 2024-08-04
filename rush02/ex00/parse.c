@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yseguin <youvataque@icloud.com>            +#+  +:+       +#+        */
+/*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 11:36:55 by seguinyanni       #+#    #+#             */
-/*   Updated: 2024/08/04 20:06:45 by yseguin          ###   ########.fr       */
+/*   Updated: 2024/08/04 23:28:33 by seguinyanni      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include "struct.h"
 
 int		ft_strlen(char *str);
-char	*ft_strdup(char *src);
+char	*ft_strdup_value(char *src);
+char	*ft_strdup_key(char *src);
 
 ///////////////////////////////////////////////////////////////////
 // count size of file_path (in bytes)
@@ -90,13 +91,13 @@ t_dic	*convert_tab(char **str_tab)
 	{
 		if (index[0] % 2 != 0)
 		{
-			result[index[1]].value = ft_strdup(str_tab[index[0]]);
+			result[index[1]].value = ft_strdup_value(str_tab[index[0]]);
 			index[1]++;
 		}
 		else
 		{
-			result[index[1]].key = ft_strdup(str_tab[index[0]]);
-			result[index[1]].key_len = ft_strlen(str_tab[index[0]]);
+			result[index[1]].key = ft_strdup_key(str_tab[index[0]]);
+			result[index[1]].key_len = ft_strlen(result[index[1]].key);
 		}
 		index[0]++;
 	}
