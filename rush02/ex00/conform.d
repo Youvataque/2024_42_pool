@@ -1,1 +1,0 @@
-conform.o: conform.c
