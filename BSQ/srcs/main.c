@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yseguin <youvataque@icloud.com>            +#+  +:+       +#+        */
+/*   By: seguinyannis <seguinyannis@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:54:05 by fullgreen         #+#    #+#             */
-/*   Updated: 2024/08/07 22:17:32 by yseguin          ###   ########.fr       */
+/*   Updated: 2024/08/10 18:51:40 by seguinyanni      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int	base_check(t_args_data *data, char *base_str)
 {
 	if (data->nb_lines == 0)
 	{
-		ft_putstr("map error");
+		write(2, "Map error\n",11);
 		return (0);
 	}
 	if (!ft_check_map(base_str, *data))
 	{
-		ft_putstr("map error");
+		write(2, "Map error\n",11);
 		return (0);
 	}
 	return (1);
@@ -42,7 +42,7 @@ int	to_execute_main(char *base_str, t_args_data *data)
 	i = 1;
 	if (base_str == NULL)
 	{
-		ft_putstr("map error");
+		write(2, "Map error\n",11);
 		return (1);
 	}
 	*data = string_args(base_str, *data);
